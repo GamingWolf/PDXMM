@@ -63,6 +63,7 @@
     <Compile Include="AbortableBackgroundWorker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomFont.cs" />
     <Compile Include="General.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -131,7 +132,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\01 Digitall.ttf" />
+    <EmbeddedResource Include="Resources\01 Digitall.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

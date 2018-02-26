@@ -14,12 +14,27 @@ namespace PDXMM
         public MainWindow()
         {
             InitializeComponent();
+            GetFonts();
             Load += MainWindow_Load;
             General.URLWorker.WorkerSupportsCancellation = true;
             foreach (Control ctrl in MainPanel.Controls)
             {
                 ctrl.Dispose();
             }
+        }
+
+        private void GetFonts()
+        {
+            CustomFont.FontInt(36F);
+            paradoxLabel.Font = CustomFont.myFont;
+
+            CustomFont.FontInt(15.75F);
+            stellarisBtn.Font = CustomFont.myFont;
+            hoi4Btn.Font = CustomFont.myFont;
+            eu4Btn.Font = CustomFont.myFont;
+            ck2Btn.Font = CustomFont.myFont;
+            settingsBtn.Font = CustomFont.myFont;
+            closeBtn.Font = CustomFont.myFont;
         }
 
         public void MainWindow_Load(object s, EventArgs e)

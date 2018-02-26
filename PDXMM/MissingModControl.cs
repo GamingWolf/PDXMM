@@ -23,6 +23,9 @@ namespace PDXMM
         {
             InitializeComponent();
             missingDataGrid.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            CustomFont.FontInt(45F);
+            updateBar.Font = CustomFont.myFont;
             updateBar.Maximum = General.MissingMods.Count;
             NWInt();
         }

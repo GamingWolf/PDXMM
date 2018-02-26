@@ -17,7 +17,7 @@ namespace PDXMM
         public ContentControl(string FileLocation, string SteamModPath, string SelectedGame, string InstalledModsPath, string GameID, string Name)
         {
             InitializeComponent();
-
+            GetFonts();
             nameLbl.Text = Name;
 
             if (File.Exists(FileLocation))
@@ -39,6 +39,22 @@ namespace PDXMM
                 Controls.Add(notInstalled);
                 notInstalled.BringToFront();
             }
+        }
+
+        private void GetFonts()
+        {
+            CustomFont.FontInt(39.075F);
+            nameLbl.Font = CustomFont.myFont;
+
+            CustomFont.FontInt(12F);
+            presetBtn.Font = CustomFont.myFont;
+            copyBtn.Font = CustomFont.myFont;
+            applyBtn.Font = CustomFont.myFont;
+            pasteBtn.Font = CustomFont.myFont;
+
+            CustomFont.FontInt(45F);
+            updateBar.Font = CustomFont.myFont;
+            updateBar.Font = CustomFont.myFont;
         }
 
         public static void GeneralInit()
