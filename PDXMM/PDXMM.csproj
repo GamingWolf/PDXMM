@@ -64,6 +64,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomFont.cs" />
+    <Compile Include="Ext.cs" />
     <Compile Include="General.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>

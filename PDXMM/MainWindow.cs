@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace PDXMM
 {
@@ -39,6 +40,7 @@ namespace PDXMM
 
         public void MainWindow_Load(object s, EventArgs e)
         {
+            WindowState = FormWindowState.Normal;
             stellarisBtn.PerformClick();
         }
 

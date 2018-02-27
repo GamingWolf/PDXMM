@@ -24,7 +24,7 @@ namespace PDXMM
 
         public static int urlWorkerProgress, urlProgressInt;
 
-        public static bool MissingMod = false, ClearOverWrite = false, GotURLNames = false, MissingInstalledModName= false;
+        public static bool MissingMod = false, ClearOverWrite = false, GotURLNames = false, MissingInstalledModName = false, checkDone = false;
 
         public static IEnumerable<string> query;
 
@@ -48,6 +48,7 @@ namespace PDXMM
                             ShowNewFolderButton = false
                         };
                         steam.ShowDialog();
+                        steam.Dispose();
                         SteamModPath = steam.SelectedPath;
 
                         var location = new StringBuilder();
@@ -57,7 +58,9 @@ namespace PDXMM
                         {
                             file.Write(location);
                         }
+                        SteamModPath += SelectedGame;
                     }
+
                 }
             }
             else
