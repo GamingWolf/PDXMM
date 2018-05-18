@@ -34,15 +34,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameLbl = new System.Windows.Forms.Label();
             this.dataGridDisp = new System.Windows.Forms.DataGridView();
+            this.Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Origin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModName = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.applyBtn = new System.Windows.Forms.Button();
             this.updateBar = new CircularProgressBar.CircularProgressBar();
             this.pasteBtn = new System.Windows.Forms.Button();
             this.copyBtn = new System.Windows.Forms.Button();
             this.presetBtn = new System.Windows.Forms.Button();
-            this.Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Origin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModName = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDisp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,13 +104,49 @@
             this.dataGridDisp.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridDisp.RowHeadersVisible = false;
             this.dataGridDisp.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Empty;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Empty;
             this.dataGridDisp.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridDisp.Size = new System.Drawing.Size(991, 610);
             this.dataGridDisp.TabIndex = 1;
             this.dataGridDisp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDisp_CellContentClick);
+            // 
+            // Active
+            // 
+            this.Active.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Active.FalseValue = "0";
+            this.Active.HeaderText = "Active";
+            this.Active.Name = "Active";
+            this.Active.ReadOnly = true;
+            this.Active.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Active.TrueValue = "1";
+            this.Active.Width = 49;
+            // 
+            // Origin
+            // 
+            this.Origin.HeaderText = "Origin";
+            this.Origin.Name = "Origin";
+            this.Origin.ReadOnly = true;
+            this.Origin.Visible = false;
+            // 
+            // ModName
+            // 
+            this.ModName.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.ModName.FillWeight = 21.2766F;
+            this.ModName.HeaderText = "Name";
+            this.ModName.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.ModName.Name = "ModName";
+            this.ModName.ReadOnly = true;
+            this.ModName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ModName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ModName.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID.FillWeight = 178.7234F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // applyBtn
             // 
@@ -128,6 +164,7 @@
             this.applyBtn.TabIndex = 4;
             this.applyBtn.Text = "APPLY";
             this.applyBtn.UseVisualStyleBackColor = false;
+            this.applyBtn.Click += new System.EventHandler(this.applyBtn_Click);
             // 
             // updateBar
             // 
@@ -214,44 +251,6 @@
             this.presetBtn.TabIndex = 9;
             this.presetBtn.Text = "PRESETS";
             this.presetBtn.UseVisualStyleBackColor = false;
-            // 
-            // Active
-            // 
-            this.Active.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Active.FalseValue = "0";
-            this.Active.HeaderText = "Active";
-            this.Active.Name = "Active";
-            this.Active.ReadOnly = true;
-            this.Active.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Active.TrueValue = "1";
-            this.Active.Width = 49;
-            // 
-            // Origin
-            // 
-            this.Origin.HeaderText = "Origin";
-            this.Origin.Name = "Origin";
-            this.Origin.ReadOnly = true;
-            this.Origin.Visible = false;
-            // 
-            // ModName
-            // 
-            this.ModName.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.ModName.FillWeight = 21.2766F;
-            this.ModName.HeaderText = "Name";
-            this.ModName.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.ModName.Name = "ModName";
-            this.ModName.ReadOnly = true;
-            this.ModName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ModName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ModName.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID.FillWeight = 178.7234F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
             // 
             // ContentControl
             // 

@@ -224,6 +224,15 @@ namespace PDXMM
                 copyBtn.SendToBack();
                 General.MissingMod = false;
             }
+            else
+            {
+
+            }
+        }
+
+        private void applyBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
